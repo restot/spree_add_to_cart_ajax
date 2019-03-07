@@ -38,7 +38,7 @@ Deface::Override.new(virtual_path: 'spree/products/_product',
 
 Deface::Override.new(virtual_path: 'spree/products/show',
                      name: 'add_ajax_form_to_product_page',
-                     replase: '.add-to-cart',
+                     replace: '.add-to-cart',
                      text: <<-eos
     <div id="show_fix" class="add_to_cart_products__panel">
       <%= form_for :order, :url => populate_orders_path, html: { class: 'add_to_cart_products__form' } do |f| %>
