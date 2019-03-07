@@ -36,7 +36,7 @@ Deface::Override.new(virtual_path: 'spree/products/_product',
   eos
 )
 
-Deface::Override.new(virtual_path: 'spree/products/show',
+Deface::Override.new(virtual_path: 'spree/products/_cart_form',
                      name: 'add_ajax_form_to_product_page',
                      replace: '.add-to-cart',
                      text: <<-eos
