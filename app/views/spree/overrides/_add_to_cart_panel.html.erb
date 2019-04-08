@@ -1,31 +1,27 @@
 <div class="add_to_cart_products__panel">
-  <%= form_for :order, :url => populate_orders_path, html: { class: 'add_to_cart_products__form' } do |f| %>
-    <%= hidden_field_tag "variant_id", product.master.id %>
-    <%= hidden_field_tag :back, true %>
-    <% if product.price_in(current_currency) and !product.price.nil? %>
-      <% if product.variants.size > 1 || product.master.can_supply? %>
-        <div class="add-to-cart">
-          <div class="input-group">
-            <%= number_field_tag :quantity, 1, class: 'title form-control', min: 1, step: 1 %>
-            <span class="input-group-btn">
-                  <%= button_tag :class => 'btn btn-success add_to_cart_products__button', :type => :submit do %>
-                    + <span class="glyphicon glyphicon-shopping-cart"></span>
+<%= form_for :order, :url => populate_orders_path, html: { class: 'add_to_cart_products__form' } do |f| %>
+        <%= hidden_field_tag "variant_id", product.master.id %>
+        <%= hidden_field_tag :back, true %>
+
+            <div class="add-to-cart addToCartSide justify-content-center d-flex">
+              <div class="addToCartInputOutside">
+
+                <%= number_field_tag :quantity, 1, class: 'addToCartInput', min: 1, step: 1 %>
+                  </div>
+
+
+                <span class="input-group-btn">
+                  <%= button_tag :class => 'addToCart add_to_cart_products__button', :type => :submit do %>
+                    <i class="fa fa-shopping-cart"></i>
                   <% end %>
                 </span>
-          </div>
-        </div>
-      <% else %>
-        <div class="out-of-stock"><%= Spree.t(:out_of_stock) %></div>
+              </div>
+
+
       <% end %>
-    <% else %>
-      <div id="product-price">
-        <div><span class="price selling" itemprop="price"><%= Spree.t('product_not_available_in_this_currency') %></span></div>
-      </div>
-    <% end %>
-  <% end %>
-  <script>
-      $(function() {
-          $('.add_to_cart_products__form').addToCartAjaxForm();
-      });
-  </script>
+      <script>
+          $(function() {
+              $('.add_to_cart_products__form').addToCartAjaxForm();
+          });
+      </script>
 </div>
