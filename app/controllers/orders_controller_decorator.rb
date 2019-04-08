@@ -28,7 +28,7 @@ Spree::OrdersController.class_eval do
       end
     else
       respond_with(order) do |format|
-#         format.html { redirect_to cart_path }
+        format.html { redirect_to cart_path }
         format.json { render :json => { message: Spree.t(:item_added_to_cart) } }
       end
     end
