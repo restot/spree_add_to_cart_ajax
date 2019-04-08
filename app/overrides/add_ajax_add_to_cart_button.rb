@@ -1,6 +1,6 @@
 Deface::Override.new(virtual_path: 'spree/products/_product',
   name: 'add_add_to_cart_button_to_products_page',
-  insert_after: '.panel-footer',
+  insert_after: '.catalogBoxFooter',
   partial: 'spree/overrides/add_to_cart_panel'
 )
 
