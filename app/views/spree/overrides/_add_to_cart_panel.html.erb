@@ -61,6 +61,8 @@
             <div class="addToCartSide d-flex justify-content-center">
               <div class="addToCartInputOutside">
                 <%= number_field_tag :quantity, 1, class: 'addToCartInput', min: 1 %>
+                <div class="editNum addNum">+</div>
+                  <div class="editNum remNum">-</div>
               </div>
               <%= button_tag class: 'addToCart', id: 'add-to-cart-button', type: :submit do %>
                 <i class="fa fa-shopping-cart"></i>
