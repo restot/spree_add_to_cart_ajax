@@ -8,7 +8,7 @@ Deface::Override.new(virtual_path: 'spree/products/show',
                      name: 'add_ajax_form_to_product_page',
                      replace: '#cart-form',
                      partial: 'spree/overrides/add_to_cart_product_show'
-                     # disabled: true
+                     disabled: true
 )
 
 # Deface::Override.new(virtual_path: 'spree/products/show',
